@@ -14,7 +14,7 @@ module.exports = function(app){
 				res.status(200).send(mattermost.responseMessage('An error occured!\n``' + err + '``', 'ephemeral'));
 			}
 			
-			var message = (process.env.MESSAGE || '**{user} invites to Hangout**\nClick <{link}|here> to join!');
+			var message = (process.env.MESSAGE || '**{user} приглашает в Hangouts**\nПерейдите <{link}|сюда> чтоб присоединиться!');
 			message = message.replace('{user}', req.body.user_name);
 			message = message.replace('{link}', event.hangoutLink);
 						
